@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { SpeechProvider } from '@speechly/react-client';
+import { Provider } from './context/Context';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <SpeechProvider appId='10aa0a54-ce35-4723-bcec-3d748e5c2746' language="en-US">
+    <Provider>
+       <App />
+    </Provider>
+  </SpeechProvider>,
   document.getElementById('root')
 );
 
